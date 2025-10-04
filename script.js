@@ -1,4 +1,8 @@
-document.getElementById("login-form")?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Login feature coming soon! Google integration will be added later.");
-});
+function handleCredentialResponse(response) {
+  const data = jwt_decode(response.credential);
+  console.log("User Info:", data);
+  alert("Welcome " + data.name + "!");
+  localStorage.setItem("userName", data.name);
+  localStorage.setItem("userEmail", data.email);
+  window.location.href = "account.html";
+}
