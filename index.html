@@ -4,61 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Niffystr Enterprise - Login</title>
-
-  <!-- Google Sign-In Library -->
+  <link rel="stylesheet" href="style.css" />
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #000000, #1a1a1a, #333333);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-    }
-
-    .container {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.08);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-      width: 90%;
-      max-width: 400px;
-    }
-
-    h1 {
-      font-style: italic;
-      font-size: 28px;
-      margin-bottom: 10px;
-      color: #00ffff;
-    }
-
-    p {
-      color: #ccc;
-      font-size: 14px;
-      margin-bottom: 25px;
-    }
-
-    .g_id_signin {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      font-size: 12px;
-      color: #666;
-    }
-  </style>
 </head>
 <body>
   <div class="container">
@@ -84,16 +32,8 @@
     </div>
   </div>
 
-  <footer>© 2025 Niffystr Enterprise. All rights reserved.</footer>
+  <footer>© 2025 Niffystr Enterprise</footer>
 
-  <script>
-    function handleCredentialResponse(response) {
-      const data = jwt_decode(response.credential);
-      console.log("User Info:", data);
-      alert("Welcome " + data.name + "!");
-      // You can redirect them to your main site after login:
-      // window.location.href = "main.html";
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
