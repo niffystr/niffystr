@@ -1,29 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NiffySTR COD Accounts</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niffystr Enterprise - Login</title>
+
+  <!-- Google Sign-In Library -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #000000, #1a1a1a, #333333);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-style: italic;
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #00ffff;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .g_id_signin {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>NiffySTR COD Accounts</h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="accounts.html">Available Accounts</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
+  <div class="container">
+    <h1>Niffystr Enterprise</h1>
+    <p>Sign in securely with Google to access your COD accounts and services.</p>
 
-  <section class="hero">
-    <h2>Buy & Sell Premium Call of Duty Accounts</h2>
-    <p>Get verified, high-ranked CODM accounts with fast delivery and trusted sellers.</p>
-    <a href="accounts.html" class="btn">View Accounts</a>
-  </section>
+    <!-- Google Sign-In -->
+    <div id="g_id_onload"
+      data-client_id="493345378521-86arbb0c3ed9mkuulbimo1vagi78oopr.apps.googleusercontent.com"
+      data-context="signin"
+      data-ux_mode="popup"
+      data-callback="handleCredentialResponse"
+      data-auto_prompt="false">
+    </div>
 
-  <footer>
-    <p>© 2025 NiffySTR. All rights reserved.</p>
-  </footer>
+    <div class="g_id_signin"
+      data-type="standard"
+      data-shape="rectangular"
+      data-theme="outline"
+      data-text="sign_in_with"
+      data-size="large"
+      data-logo_alignment="left">
+    </div>
+  </div>
+
+  <footer>© 2025 Niffystr Enterprise. All rights reserved.</footer>
+
+  <script>
+    function handleCredentialResponse(response) {
+      const data = jwt_decode(response.credential);
+      console.log("User Info:", data);
+      alert("Welcome " + data.name + "!");
+      // You can redirect them to your main site after login:
+      // window.location.href = "main.html";
+    }
+  </script>
 </body>
 </html>
