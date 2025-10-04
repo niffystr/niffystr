@@ -3,44 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Available COD Accounts - NiffySTR</title>
+  <title>Niffystr Enterprise - Accounts</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: white;
+      text-align: center;
+      padding-top: 40px;
+    }
+    .account {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      margin: 15px auto;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+    video {
+      width: 100%;
+      border-radius: 10px;
+    }
+    button {
+      background-color: #00ffff;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #009999;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>NiffySTR COD Accounts</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="accounts.html" class="active">Available Accounts</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
+  <h1>Welcome to Niffystr Enterprise</h1>
+  <p>Exclusive Call of Duty Accounts for Sale</p>
 
-  <section class="accounts">
-    <h2>Available Accounts</h2>
+  <div class="account">
+    <h3>🔥 Account #1 – ₦30,000</h3>
+    <video controls>
+      <source src="https://drive.google.com/uc?export=download&id=1l2IoBMf3WrLkw9_9r5AalsDVFGk58Brp" type="video/mp4">
+    </video>
+    <p>Legendary skins, maxed weapons, and more.</p>
+  </div>
 
-    <div class="account-card">
-      <video controls>
-        <source src="https://drive.google.com/uc?export=download&id=1FFDSqrhSJYQatnFgr81BdhY1hmxrlIL0" type="video/mp4">
-      </video>
-      <h3>Account #1 — ₦20,000</h3>
-      <p>Legendary rank, rare skins, and max weapons. Instant delivery.</p>
-      <a href="login.html" class="btn">Buy Now</a>
-    </div>
+  <button onclick="logout()">Logout</button>
 
-    <div class="account-card">
-      <video controls>
-        <source src="https://drive.google.com/uc?export=download&id=1l2IoBMf3WrLkw9_9r5AalsDVFGk58Brp" type="video/mp4">
-      </video>
-      <h3>Account #2 — ₦30,000</h3>
-      <p>185k CP spent, Mythic weapons unlocked. Secure transfer after payment.</p>
-      <a href="login.html" class="btn">Buy Now</a>
-    </div>
+  <script>
+    if (!localStorage.getItem("userName")) {
+      window.location.href = "index.html";
+    }
 
-  </section>
-
-  <footer>
-    <p>© 2025 NiffySTR. All rights reserved.</p>
-  </footer>
+    function logout() {
+      localStorage.clear();
+      alert("You have been logged out.");
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
