@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0b0b0b;
+  color: white;
+}
+
+header {
+  background: #111;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.4rem;
+}
+
+nav a {
+  color: #ccc;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: #00bfff;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 10%;
+}
+
+.btn {
+  background: #00bfff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.accounts {
+  padding: 40px 10%;
+}
+
+.account-card {
+  background: #111;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.account-card video {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.login-section {
+  text-align: center;
+  padding: 100px 10%;
+}
+
+.login-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-section input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 250px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.google-btn, .apple-btn {
+  background: #fff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  width: 220px;
+  transition: 0.3s;
+}
+
+.google-btn:hover { background: #eee; }
+.apple-btn { background: #000; color: #fff; }
+.apple-btn:hover { background: #222; }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #888;
+}
